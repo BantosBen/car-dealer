@@ -78,33 +78,35 @@ $page = "orders";
                                                     $order_status = $row['order_status'];
                                                     ?>
 
-                                            <tr>
-                                                <td>
-                                                    <?php echo $order_id ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $make ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $model ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $quantity ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $total ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $timestamp ?>
-                                                </td>
-                                                <td>
-                                                    <?php if ($order_status == 0) { ?>
-                                                    <span class="text-warning">Pending</span>
-                                                    <?php } ?>
-                                                </td>
-                                            </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <?php echo $order_id ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $make ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $model ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $quantity ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $total ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $timestamp ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php if ($order_status == 0) { ?>
+                                                                <span class="text-warning">Pending</span>
+                                                            <?php } else { ?>
+                                                                <span class="text-success">Confirmed</span>
+                                                            <?php } ?>
+                                                        </td>
+                                                    </tr>
 
-                                            <?php
+                                                    <?php
                                                 }
                                             } else {
                                                 echo "<tr><td colspan='7'>No pending orders found.</td></tr>";
@@ -126,11 +128,11 @@ $page = "orders";
     <!-- JavaScript files-->
     <?php include 'scripts.php'; ?>
     <script>
-    $(document).ready(function() {
-        $('#ordersTable').DataTable({
-            "lengthMenu": [3, 5, 10],
+        $(document).ready(function () {
+            $('#ordersTable').DataTable({
+                "lengthMenu": [10, 15, 20, 25],
+            });
         });
-    });
     </script>
 </body>
 

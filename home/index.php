@@ -116,10 +116,10 @@ session_start();
                                                     if ($result) {
                                                         while ($row = mysqli_fetch_array($result)) {
                                                             ?>
-                                                    <option value="<?php echo $row['make_id']; ?>">
-                                                        <?php echo $row['name']; ?>
-                                                    </option>
-                                                    <?php
+                                                            <option value="<?php echo $row['make_id']; ?>">
+                                                                <?php echo $row['name']; ?>
+                                                            </option>
+                                                            <?php
                                                         }
                                                     }
                                                     ?>
@@ -155,10 +155,10 @@ session_start();
                                                     if ($result) {
                                                         while ($row = mysqli_fetch_array($result)) {
                                                             ?>
-                                                    <option value="<?php echo $row['id']; ?>">
-                                                        <?php echo $row['colour']; ?>
-                                                    </option>
-                                                    <?php
+                                                            <option value="<?php echo $row['id']; ?>">
+                                                                <?php echo $row['colour']; ?>
+                                                            </option>
+                                                            <?php
                                                         }
                                                     }
                                                     ?>
@@ -217,68 +217,68 @@ session_start();
                                 if ($result) {
                                     while ($row = mysqli_fetch_array($result)) {
                                         ?>
-                                <div class="item">
+                                        <div class="item">
 
-                                    <div class="item-inner">
+                                            <div class="item-inner">
 
-                                        <div class="item-img">
-                                            <div class="item-img-info">
-                                                <a href="details.php?vehicle_id=<?php echo $row['vehicle_id']; ?>"
-                                                    title="See details" class="product-image">
-                                                    <img src="../vehicleimages/<?php echo $row['image_link']; ?>"
-                                                        alt="Vehicle image"></a>
-                                                <?php $condition = $row['vehicle_condition'];
+                                                <div class="item-img">
+                                                    <div class="item-img-info">
+                                                        <a href="details.php?vehicle_id=<?php echo $row['vehicle_id']; ?>"
+                                                            title="See details" class="product-image">
+                                                            <img src="../vehicleimages/<?php echo $row['image_link']; ?>"
+                                                                alt="Vehicle image"></a>
+                                                        <?php $condition = $row['vehicle_condition'];
                                                         if ($condition == "Brand New") {
                                                             ?>
-                                                <div class="new-label new-top-left">New</div>
-                                                <?php
+                                                            <div class="new-label new-top-left">New</div>
+                                                            <?php
                                                         } elseif ($condition == "Recondition") {
                                                             ?>
-                                                <div class="sale-label new-top-left">Used</div>
-                                                <?php
+                                                            <div class="sale-label new-top-left">Used</div>
+                                                            <?php
                                                         }
                                                         ?>
-                                            </div>
-                                        </div>
-
-                                        <div class="item-info">
-                                            <div class="info-inner">
-                                                <div class="item-title">
-                                                    <a href="details.php?vehicle_id=<?php echo $row['vehicle_id']; ?>"
-                                                        title="See details">
-                                                        <?php echo $row['name']; ?>
-                                                        <?php echo $row['model']; ?>
-                                                    </a>
+                                                    </div>
                                                 </div>
 
-                                                <div class="item-content">
-                                                    <div class="item-price">
-                                                        <div class="price-box">
-                                                            <span class="regular-price"><span class="price">$
-                                                                    <?php echo $row['price']; ?>
-                                                                </span> </span>
+                                                <div class="item-info">
+                                                    <div class="info-inner">
+                                                        <div class="item-title">
+                                                            <a href="details.php?vehicle_id=<?php echo $row['vehicle_id']; ?>"
+                                                                title="See details">
+                                                                <?php echo $row['name']; ?>
+                                                                <?php echo $row['model']; ?>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="item-content">
+                                                            <div class="item-price">
+                                                                <div class="price-box">
+                                                                    <span class="regular-price"><span class="price">$
+                                                                            <?php echo $row['price']; ?>
+                                                                        </span> </span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="other-info">
+                                                                <div class="col-km"><i class="fa fa-tachometer"></i>
+                                                                    <?php echo $row['colour']; ?>
+                                                                </div>
+                                                                <div class="col-engine"><i class="fa fa-gear"></i>
+                                                                    <?php echo $row['transmission_type']; ?>
+                                                                </div>
+                                                                <div class="col-date"><i class="fa fa-calendar"
+                                                                        aria-hidden="true"></i>
+                                                                    <?php echo $row['year']; ?>
+                                                                </div>
+                                                            </div>
+
                                                         </div>
                                                     </div>
-
-                                                    <div class="other-info">
-                                                        <div class="col-km"><i class="fa fa-tachometer"></i>
-                                                            <?php echo $row['colour']; ?>
-                                                        </div>
-                                                        <div class="col-engine"><i class="fa fa-gear"></i>
-                                                            <?php echo $row['transmission_type']; ?>
-                                                        </div>
-                                                        <div class="col-date"><i class="fa fa-calendar"
-                                                                aria-hidden="true"></i>
-                                                            <?php echo $row['year']; ?>
-                                                        </div>
-                                                    </div>
-
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <?php
+                                        <?php
                                     }
                                 }
                                 ?>
@@ -301,68 +301,68 @@ session_start();
                                 if ($result) {
                                     while ($row = mysqli_fetch_array($result)) {
                                         ?>
-                                <div class="item">
+                                        <div class="item">
 
-                                    <div class="item-inner">
+                                            <div class="item-inner">
 
-                                        <div class="item-img">
-                                            <div class="item-img-info">
-                                                <a href="details.php?vehicle_id=<?php echo $row['vehicle_id']; ?>"
-                                                    title="See details" class="product-image">
-                                                    <img src="../vehicleimages/<?php echo $row['image_link']; ?>"
-                                                        alt="Vehicle image"></a>
-                                                <?php $condition = $row['vehicle_condition'];
+                                                <div class="item-img">
+                                                    <div class="item-img-info">
+                                                        <a href="details.php?vehicle_id=<?php echo $row['vehicle_id']; ?>"
+                                                            title="See details" class="product-image">
+                                                            <img src="../vehicleimages/<?php echo $row['image_link']; ?>"
+                                                                alt="Vehicle image"></a>
+                                                        <?php $condition = $row['vehicle_condition'];
                                                         if ($condition == "Brand New") {
                                                             ?>
-                                                <div class="new-label new-top-left">New</div>
-                                                <?php
+                                                            <div class="new-label new-top-left">New</div>
+                                                            <?php
                                                         } elseif ($condition == "Recondition") {
                                                             ?>
-                                                <div class="sale-label new-top-left">Used</div>
-                                                <?php
+                                                            <div class="sale-label new-top-left">Used</div>
+                                                            <?php
                                                         }
                                                         ?>
-                                            </div>
-                                        </div>
-
-                                        <div class="item-info">
-                                            <div class="info-inner">
-                                                <div class="item-title">
-                                                    <a href="details.php?vehicle_id=<?php echo $row['vehicle_id']; ?>"
-                                                        title="See details">
-                                                        <?php echo $row['name']; ?>
-                                                        <?php echo $row['model']; ?>
-                                                    </a>
+                                                    </div>
                                                 </div>
 
-                                                <div class="item-content">
-                                                    <div class="item-price">
-                                                        <div class="price-box">
-                                                            <span class="regular-price"><span class="price">$
-                                                                    <?php echo $row['price']; ?>
-                                                                </span> </span>
+                                                <div class="item-info">
+                                                    <div class="info-inner">
+                                                        <div class="item-title">
+                                                            <a href="details.php?vehicle_id=<?php echo $row['vehicle_id']; ?>"
+                                                                title="See details">
+                                                                <?php echo $row['name']; ?>
+                                                                <?php echo $row['model']; ?>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="item-content">
+                                                            <div class="item-price">
+                                                                <div class="price-box">
+                                                                    <span class="regular-price"><span class="price">$
+                                                                            <?php echo $row['price']; ?>
+                                                                        </span> </span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="other-info">
+                                                                <div class="col-km"><i class="fa fa-tachometer"></i>
+                                                                    <?php echo $row['colour']; ?>
+                                                                </div>
+                                                                <div class="col-engine"><i class="fa fa-gear"></i>
+                                                                    <?php echo $row['transmission_type']; ?>
+                                                                </div>
+                                                                <div class="col-date"><i class="fa fa-calendar"
+                                                                        aria-hidden="true"></i>
+                                                                    <?php echo $row['year']; ?>
+                                                                </div>
+                                                            </div>
+
                                                         </div>
                                                     </div>
-
-                                                    <div class="other-info">
-                                                        <div class="col-km"><i class="fa fa-tachometer"></i>
-                                                            <?php echo $row['colour']; ?>
-                                                        </div>
-                                                        <div class="col-engine"><i class="fa fa-gear"></i>
-                                                            <?php echo $row['transmission_type']; ?>
-                                                        </div>
-                                                        <div class="col-date"><i class="fa fa-calendar"
-                                                                aria-hidden="true"></i>
-                                                            <?php echo $row['year']; ?>
-                                                        </div>
-                                                    </div>
-
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <?php
+                                        <?php
                                     }
                                 }
                                 ?>
@@ -383,97 +383,97 @@ session_start();
         <!-- JavaScript -->
         <?php include 'scripts.php'; ?>
         <script>
-        jQuery(document).ready(function() {
-            jQuery('#rev_slider_4').show().revolution({
-                dottedOverlay: 'none',
-                delay: 5000,
-                startwidth: 1170,
-                startheight: 650,
+            jQuery(document).ready(function () {
+                jQuery('#rev_slider_4').show().revolution({
+                    dottedOverlay: 'none',
+                    delay: 5000,
+                    startwidth: 1170,
+                    startheight: 650,
 
-                hideThumbs: 200,
-                thumbWidth: 200,
-                thumbHeight: 50,
-                thumbAmount: 2,
+                    hideThumbs: 200,
+                    thumbWidth: 200,
+                    thumbHeight: 50,
+                    thumbAmount: 2,
 
-                navigationType: 'thumb',
-                navigationArrows: 'solo',
-                navigationStyle: 'round',
+                    navigationType: 'thumb',
+                    navigationArrows: 'solo',
+                    navigationStyle: 'round',
 
-                touchenabled: 'on',
-                onHoverStop: 'on',
+                    touchenabled: 'on',
+                    onHoverStop: 'on',
 
-                swipe_velocity: 0.7,
-                swipe_min_touches: 1,
-                swipe_max_touches: 1,
-                drag_block_vertical: false,
+                    swipe_velocity: 0.7,
+                    swipe_min_touches: 1,
+                    swipe_max_touches: 1,
+                    drag_block_vertical: false,
 
-                spinner: 'spinner0',
-                keyboardNavigation: 'off',
+                    spinner: 'spinner0',
+                    keyboardNavigation: 'off',
 
-                navigationHAlign: 'center',
-                navigationVAlign: 'bottom',
-                navigationHOffset: 0,
-                navigationVOffset: 20,
+                    navigationHAlign: 'center',
+                    navigationVAlign: 'bottom',
+                    navigationHOffset: 0,
+                    navigationVOffset: 20,
 
-                soloArrowLeftHalign: 'left',
-                soloArrowLeftValign: 'center',
-                soloArrowLeftHOffset: 20,
-                soloArrowLeftVOffset: 0,
+                    soloArrowLeftHalign: 'left',
+                    soloArrowLeftValign: 'center',
+                    soloArrowLeftHOffset: 20,
+                    soloArrowLeftVOffset: 0,
 
-                soloArrowRightHalign: 'right',
-                soloArrowRightValign: 'center',
-                soloArrowRightHOffset: 20,
-                soloArrowRightVOffset: 0,
+                    soloArrowRightHalign: 'right',
+                    soloArrowRightValign: 'center',
+                    soloArrowRightHOffset: 20,
+                    soloArrowRightVOffset: 0,
 
-                shadow: 0,
-                fullWidth: 'on',
-                fullScreen: 'off',
+                    shadow: 0,
+                    fullWidth: 'on',
+                    fullScreen: 'off',
 
-                stopLoop: 'off',
-                stopAfterLoops: -1,
-                stopAtSlide: -1,
+                    stopLoop: 'off',
+                    stopAfterLoops: -1,
+                    stopAtSlide: -1,
 
-                shuffle: 'off',
+                    shuffle: 'off',
 
-                autoHeight: 'off',
-                forceFullWidth: 'on',
-                fullScreenAlignForce: 'off',
-                minFullScreenHeight: 0,
-                hideNavDelayOnMobile: 1500,
+                    autoHeight: 'off',
+                    forceFullWidth: 'on',
+                    fullScreenAlignForce: 'off',
+                    minFullScreenHeight: 0,
+                    hideNavDelayOnMobile: 1500,
 
-                hideThumbsOnMobile: 'off',
-                hideBulletsOnMobile: 'off',
-                hideArrowsOnMobile: 'off',
-                hideThumbsUnderResolution: 0,
+                    hideThumbsOnMobile: 'off',
+                    hideBulletsOnMobile: 'off',
+                    hideArrowsOnMobile: 'off',
+                    hideThumbsUnderResolution: 0,
 
-                hideSliderAtLimit: 0,
-                hideCaptionAtLimit: 0,
-                hideAllCaptionAtLilmit: 0,
-                startWithSlide: 0,
-                fullScreenOffsetContainer: ''
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    startWithSlide: 0,
+                    fullScreenOffsetContainer: ''
+                });
             });
-        });
         </script>
         <script>
-        $(document).ready(function() {
-            $('.navbar-collapse form').click(function(e) {
-                e.stopPropagation();
+            $(document).ready(function () {
+                $('.navbar-collapse form').click(function (e) {
+                    e.stopPropagation();
+                });
             });
-        });
 
 
-        var dthen1 = new Date("12/25/17 11:59:00 PM");
-        start = "08/04/15 03:02:11 AM";
-        start_date = Date.parse(start);
-        var dnow1 = new Date(start_date);
-        if (CountStepper > 0)
-            ddiff = new Date((dnow1) - (dthen1));
-        else
-            ddiff = new Date((dthen1) - (dnow1));
-        gsecs1 = Math.floor(ddiff.valueOf() / 1000);
+            var dthen1 = new Date("12/25/17 11:59:00 PM");
+            start = "08/04/15 03:02:11 AM";
+            start_date = Date.parse(start);
+            var dnow1 = new Date(start_date);
+            if (CountStepper > 0)
+                ddiff = new Date((dnow1) - (dthen1));
+            else
+                ddiff = new Date((dthen1) - (dnow1));
+            gsecs1 = Math.floor(ddiff.valueOf() / 1000);
 
-        var iid1 = "countbox_1";
-        CountBack_slider(gsecs1, "countbox_1", 1);
+            var iid1 = "countbox_1";
+            CountBack_slider(gsecs1, "countbox_1", 1);
         </script>
 </body>
 

@@ -74,7 +74,8 @@ $page = "home";
                             <div class="statistic-block block" title="My orders">
                                 <div class="progress-details d-flex align-items-end justify-content-between">
                                     <div class="title">
-                                        <div class="icon"><i class="fa fa-history"></i></div><strong>My Orders</strong>
+                                        <div class="icon"><i class="fa fa-history"></i></div><strong>My Complete
+                                            Orders</strong>
                                     </div>
                                     <div class="number dashtext-2">
                                         <?php echo $orders_count; ?>
@@ -159,33 +160,33 @@ $page = "home";
                                                     $order_status = $row['order_status'];
                                                     ?>
 
-                                            <tr>
-                                                <td>
-                                                    <?php echo $order_id ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $make ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $model ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $quantity ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $total ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $timestamp ?>
-                                                </td>
-                                                <td>
-                                                    <?php if ($order_status == 0) { ?>
-                                                    <span class="text-warning">Pending</span>
-                                                    <?php } ?>
-                                                </td>
-                                            </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <?php echo $order_id ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $make ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $model ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $quantity ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $total ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $timestamp ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php if ($order_status == 0) { ?>
+                                                                <span class="text-warning">Pending</span>
+                                                            <?php } ?>
+                                                        </td>
+                                                    </tr>
 
-                                            <?php
+                                                    <?php
                                                 }
                                             } else {
                                                 echo "<tr><td colspan='7'>No pending orders found.</td></tr>";
@@ -207,11 +208,11 @@ $page = "home";
     </div>
     <?php include 'scripts.php'; ?>
     <script>
-    $(document).ready(function() {
-        $('#pendingOrderTable').DataTable({
-            "lengthMenu": [3, 5, 10],
+        $(document).ready(function () {
+            $('#pendingOrderTable').DataTable({
+                "lengthMenu": [10, 15, 20, 25],
+            });
         });
-    });
     </script>
 </body>
 
