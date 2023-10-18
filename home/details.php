@@ -82,8 +82,8 @@ session_start();
                                         src="../vehicleimages/<?php echo $image_link; ?>" alt="product-image">
                                 </div>
                                 <div class="row justify-content-center">
-                                    <div class="col-md-4 mx-auto">
-                                        <div class="card mx-auto">
+                                    <div class="col-md-5 mx-auto justify-content-center">
+                                        <div class="card">
                                             <!-- Quantity Controls -->
                                             <div class="add-to-cart">
                                                 <div class="pull-left">

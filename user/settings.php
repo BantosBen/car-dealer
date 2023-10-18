@@ -48,41 +48,41 @@ $page = "settings";
             if (@$_SESSION['success'] == true) {
                 $success = $_SESSION['success'];
                 ?>
-                <script>
-                    swal({
-                        title: "SUCCESS!",
-                        text: "<?php echo $success; ?>",
-                        icon: "success",
-                        button: "OK",
-                    });
-                </script>
-                <?php
+            <script>
+            swal({
+                title: "SUCCESS!",
+                text: "<?php echo $success; ?>",
+                icon: "success",
+                button: "OK",
+            });
+            </script>
+            <?php
                 unset($_SESSION['success']);
             } elseif (@$_SESSION['error'] == true) {
                 $error = $_SESSION['error'];
                 ?>
-                <script>
-                    swal({
-                        title: "ERROR!",
-                        text: "<?php echo $error; ?>",
-                        icon: "error",
-                        button: "OK",
-                    });
-                </script>
-                <?php
+            <script>
+            swal({
+                title: "ERROR!",
+                text: "<?php echo $error; ?>",
+                icon: "error",
+                button: "OK",
+            });
+            </script>
+            <?php
                 unset($_SESSION['error']);
             } elseif (@$_SESSION['missing'] == true) {
                 $missing = $_SESSION['missing'];
                 ?>
-                <script>
-                    swal({
-                        title: "INFO!",
-                        text: "<?php echo $missing; ?>",
-                        icon: "info",
-                        button: "OK",
-                    });
-                </script>
-                <?php
+            <script>
+            swal({
+                title: "INFO!",
+                text: "<?php echo $missing; ?>",
+                icon: "info",
+                button: "OK",
+            });
+            </script>
+            <?php
                 unset($_SESSION['missing']);
             }
             ?>
@@ -154,25 +154,25 @@ $page = "settings";
                                             if ($result['gender'] == 'male') {
                                                 ?>
 
-                                                <input type="radio" checked value="male" name="gender"
-                                                    class="radio-template">
-                                                <label class="col-sm-2 form-control-label">Male</label>
+                                            <input type="radio" checked value="male" name="gender"
+                                                class="radio-template">
+                                            <label class="col-sm-2 form-control-label">Male</label>
 
-                                                <input type="radio" value="female" name="gender" class="radio-template">
-                                                <label class="col-sm-3 form-control-label">Female</label>
+                                            <input type="radio" value="female" name="gender" class="radio-template">
+                                            <label class="col-sm-3 form-control-label">Female</label>
 
-                                                <?php
+                                            <?php
                                             } elseif ($result['gender'] == 'female') {
                                                 ?>
 
-                                                <input type="radio" value="male" name="gender" class="radio-template">
-                                                <label class="col-sm-2 form-control-label">Male</label>
+                                            <input type="radio" value="male" name="gender" class="radio-template">
+                                            <label class="col-sm-2 form-control-label">Male</label>
 
-                                                <input type="radio" value="female" checked name="gender"
-                                                    class="radio-template">
-                                                <label class="col-sm-3 form-control-label">Female</label>
+                                            <input type="radio" value="female" checked name="gender"
+                                                class="radio-template">
+                                            <label class="col-sm-3 form-control-label">Female</label>
 
-                                                <?php
+                                            <?php
                                             }
                                             ?>
                                         </div>
@@ -202,19 +202,7 @@ $page = "settings";
                     </div>
                 </div>
             </section>
-
-
-
-
-            <footer class="footer">
-                <div class="footer__block block no-margin-bottom">
-                    <div class="container-fluid text-center">
-                        <p class="no-margin-bottom">2020 &copy; Dreeko Corporations | All Rights Reserved. <a
-                                target="_blank" href="https://github.com/Harshana-Rathnayaka" class="icon-repo-forked">
-                                Repository &rightarrowtail;</a></p>
-                    </div>
-                </div>
-            </footer>
+            <?php include 'footer.php'; ?>
         </div>
     </div>
     <!-- JavaScript files-->

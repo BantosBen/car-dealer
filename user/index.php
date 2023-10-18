@@ -159,33 +159,33 @@ $page = "home";
                                                     $order_status = $row['order_status'];
                                                     ?>
 
-                                                    <tr>
-                                                        <td>
-                                                            <?php echo $order_id ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo $make ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo $model ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo $quantity ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo $total ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo $timestamp ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php if ($order_status == 0) { ?>
-                                                                <span class="text-warning">Pending</span>
-                                                            <?php } ?>
-                                                        </td>
-                                                    </tr>
+                                            <tr>
+                                                <td>
+                                                    <?php echo $order_id ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $make ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $model ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $quantity ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $total ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $timestamp ?>
+                                                </td>
+                                                <td>
+                                                    <?php if ($order_status == 0) { ?>
+                                                    <span class="text-warning">Pending</span>
+                                                    <?php } ?>
+                                                </td>
+                                            </tr>
 
-                                                    <?php
+                                            <?php
                                                 }
                                             } else {
                                                 echo "<tr><td colspan='7'>No pending orders found.</td></tr>";
@@ -202,26 +202,16 @@ $page = "home";
                 </div>
             </section>
 
-            <footer class="footer">
-                <div class="footer__block block no-margin-bottom">
-                    <div class="col-sm-4 col-xs-12 coppyright"><span>
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>
-                        </span> EliteAutoEnclave &reg; | All
-                        Rights Reserved.
-                        &copy;</div>
-                </div>
-            </footer>
+            <?php include 'footer.php'; ?>
         </div>
     </div>
     <?php include 'scripts.php'; ?>
     <script>
-        $(document).ready(function () {
-            $('#pendingOrderTable').DataTable({
-                "lengthMenu": [3, 5, 10],
-            });
+    $(document).ready(function() {
+        $('#pendingOrderTable').DataTable({
+            "lengthMenu": [3, 5, 10],
         });
+    });
     </script>
 </body>
 
