@@ -14,14 +14,14 @@ if (!isset($_POST['btnUpdate'])) {
 } else {
 
     // getting the values
-    $userid = $_POST['userid'];
-    $firstname = $_POST['fname'];
-    $lastname = $_POST['lname'];
-    $username = $_POST['uname'];
-    $birthday = $_POST['birthday'];
-    $email = $_POST['email'];
-    $gender = $_POST['gender'];
-    $contact = $_POST['contact'];
+    $userid = trim($_POST['userid']);
+    $firstname = trim($_POST['fname']);
+    $lastname = trim($_POST['lname']);
+    $username = trim($_POST['uname']);
+    $birthday = trim($_POST['birthday']);
+    $email = trim($_POST['email']);
+    $gender = trim($_POST['gender']);
+    $contact = trim($_POST['contact']);
 
     // db object
     $db = new DbOperations();

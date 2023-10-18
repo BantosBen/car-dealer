@@ -17,8 +17,8 @@ if (!isset($_POST['btnEditColour'])) {
 } else {
 
     // getting the values
-    $colour_id = $_POST['colourid'];
-    $colour = $_POST['colourText'];
+    $colour_id = trim($_POST['colourid']);
+    $colour = trim($_POST['colourText']);
 
     // db object
     $db = new DbOperations();

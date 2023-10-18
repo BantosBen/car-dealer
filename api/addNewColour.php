@@ -9,7 +9,7 @@ if (isset($_POST['btnAddColour'])) {
 
     if (!empty($_POST['colourText'])) {
 
-        $colour = $_POST['colourText'];
+        $colour = trim($_POST['colourText']);
 
         // db object
         $db = new DbOperations();

@@ -17,11 +17,11 @@ if (!isset($_POST['btnEditManufacturer'])) {
 } else {
 
     // getting the values
-    $manufacturer_id = $_POST['manufacturerid'];
-    $name = $_POST['name'];
-    $address = $_POST['address'];
-    $email = $_POST['email'];
-    $contact = $_POST['contact'];
+    $manufacturer_id = trim($_POST['manufacturerid']);
+    $name = trim($_POST['name']);
+    $address = trim($_POST['address']);
+    $email = trim($_POST['email']);
+    $contact = trim($_POST['contact']);
 
     // db object
     $db = new DbOperations();

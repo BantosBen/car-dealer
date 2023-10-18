@@ -14,16 +14,16 @@ if (!isset($_POST['updateVehicleButton'])) {
 } else {
 
     // getting the values
-    $vehicle_id = $_POST['vehicleId'];
-    $model = $_POST['model'];
-    $year = $_POST['year'];
-    $engine = $_POST['engine'];
-    $horsepower = $_POST['horsepower'];
-    $condition = $_POST['condition'];
-    $transmission = $_POST['transmission'];
-    $seats = $_POST['seats'];
-    $price = $_POST['price'];
-    $in_stock = $_POST['inStock'];
+    $vehicle_id = trim($_POST['vehicleId']);
+    $model = trim($_POST['model']);
+    $year = trim($_POST['year']);
+    $engine = trim($_POST['engine']);
+    $horsepower = trim($_POST['horsepower']);
+    $condition = trim($_POST['condition']);
+    $transmission = trim($_POST['transmission']);
+    $seats = trim($_POST['seats']);
+    $price = trim($_POST['price']);
+    $in_stock = trim($_POST['inStock']);
 
     // db object
     $db = new DbOperations();

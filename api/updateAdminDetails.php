@@ -15,14 +15,14 @@ if (!isset($_POST['btnUpdate'])) {
     header("location:../admin/changesettings.php");
 } else {
 
-    $userid = $_POST['userid'];
-    $firstname = $_POST['fname'];
-    $lastname = $_POST['lname'];
-    $username = $_POST['uname'];
-    $email = $_POST['email'];
+    $userid = trim($_POST['userid']);
+    $firstname = trim($_POST['fname']);
+    $lastname = trim($_POST['lname']);
+    $username = trim($_POST['uname']);
+    $email = trim($_POST['email']);
 
     if ((empty($userid)) && (empty($firstname)) && (empty($lastname)) && (empty($username)) && (empty($email))) {
-        
+
         // some fields are missing
         $_SESSION['missing'] = "Please fill in all the details!";
 
