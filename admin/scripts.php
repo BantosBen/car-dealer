@@ -3,11 +3,11 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 
 <script>
-    $(document).ready(function () {
-        $('#vehiclesTable').DataTable({
-            "lengthMenu": [5, 10],
-        });
+$(document).ready(function() {
+    $('#data-table').DataTable({
+        "lengthMenu": [10, 15, 20, 25],
     });
+});
 </script>
 
 <script src="js/bootstrap.bundle.min.js"></script>

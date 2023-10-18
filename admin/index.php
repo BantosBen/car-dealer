@@ -10,6 +10,7 @@ if (!isset($_SESSION['User'])) {
     header('location:../user/index.php');
   }
 }
+$page = "index";
 ?>
 <!doctype html>
 <html lang="en">
@@ -82,7 +83,7 @@ if (!isset($_SESSION['User'])) {
 
 
         <div class="table-responsive">
-          <table id="vehiclesTable" class="table table-striped table-hover text-center">
+          <table id="data-table" class="table table-striped table-hover text-center">
             <thead>
               <tr>
                 <th>#</th>
