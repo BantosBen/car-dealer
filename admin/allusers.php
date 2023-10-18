@@ -10,6 +10,7 @@ if (!isset($_SESSION['User'])) {
     header('location:../user/index.php');
   }
 }
+$page = 'allusers';
 ?>
 
 
@@ -17,134 +18,21 @@ if (!isset($_SESSION['User'])) {
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Users</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet" />
-
-  <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
-
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" />
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
-
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
-  <!-- Custom styles for this template -->
-  <link href="css/dashboard.css" rel="stylesheet">
+  <?php include 'sheets.php'; ?>
 </head>
 
 <body>
-  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-center text-info" href="#">Welcome <?php echo $_SESSION['User']; ?>!</a>
-    <ul class="navbar-nav px-3">
-      <li class="nav-item text-nowrap">
-        <a class="nav-link" href="../logout.php?logout">Sign out</a>
-      </li>
-    </ul>
-  </nav>
+  <?php include 'navbar.php'; ?>
 
   <div class="container-fluid">
     <div class="row">
-      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-        <div class="sidebar-sticky">
-          </ul>
-      </nav>
-
       <div class="container-fluid">
         <div class="row">
-          <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-            <div class="sidebar-sticky">
-              <ul class="nav flex-column">
-
-                <li class="nav-item">
-                  <a class="nav-link " href="index.php">
-                    <span data-feather="list"></span>
-                    Vehicles <span class="sr-only">(current)</span>
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="addvehicle.php">
-                    <span data-feather="plus-circle"></span>
-                    Add Vehicle
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="pendingorders.php">
-                    <span data-feather="shopping-bag"></span>
-                    Pending Orders
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="allorders.php">
-                    <span data-feather="rotate-ccw"></span>
-                    All Orders
-                  </a>
-                </li>
-
-                <div class="dropdown-divider"></div>
-
-                <li class="nav-item">
-                  <a class="nav-link active" href="allusers.php">
-                    <span data-feather="users"></span>
-                    Users
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="allmanufacturers.php">
-                    <span data-feather="file-text"></span>
-                    Manufacurers
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="addmanufacturer.php">
-                    <span data-feather="plus-circle"></span>
-                    Add Manufacturer
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="colours.php">
-                    <span data-feather="droplet"></span>
-                    Colours
-                  </a>
-                </li>
-
-                <div class="dropdown-divider"></div>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="changesettings.php">
-                    <span data-feather="settings"></span>
-                    Settings
-                  </a>
-                </li>
-            </div>
-          </nav>
-
-
-
+          <?php include 'sidebar.php'; ?>
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <div
+              class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
@@ -165,7 +53,7 @@ if (!isset($_SESSION['User'])) {
                   button: "OK",
                 });
               </script>
-            <?php
+              <?php
               unset($_SESSION['success']);
             } elseif (@$_SESSION['error'] == true) {
               $error = $_SESSION['error'];
@@ -178,7 +66,7 @@ if (!isset($_SESSION['User'])) {
                   button: "OK",
                 });
               </script>
-            <?php
+              <?php
               unset($_SESSION['error']);
             } elseif (@$_SESSION['missing'] == true) {
               $missing = $_SESSION['missing'];
@@ -191,14 +79,14 @@ if (!isset($_SESSION['User'])) {
                   button: "OK",
                 });
               </script>
-            <?php
+              <?php
               unset($_SESSION['missing']);
             }
             ?>
 
 
             <div class="table-responsive">
-              <table id="usersTable" class="table table-striped table-hover table-dark">
+              <table id="data-table" class="table table-striped table-hover">
                 <thead>
                   <tr>
                     <th>#</th>
@@ -217,24 +105,33 @@ if (!isset($_SESSION['User'])) {
                     while ($row = mysqli_fetch_array($result)) {
                       ?>
                       <tr>
-                        <td><?php echo $row['id']; ?></td>
-                        <td><?php echo $row['name']; ?></td>
-                        <td><?php echo $row['username']; ?></td>
-                        <td><?php echo $row['email']; ?></td>
-                        <td><?php echo $row['contact']; ?></td>
+                        <td>
+                          <?php echo $row['id']; ?>
+                        </td>
+                        <td>
+                          <?php echo $row['name']; ?>
+                        </td>
+                        <td>
+                          <?php echo $row['username']; ?>
+                        </td>
+                        <td>
+                          <?php echo $row['email']; ?>
+                        </td>
+                        <td>
+                          <?php echo $row['contact']; ?>
+                        </td>
                         <?php
-                            $user_status = $row['user_status'];
-                            if ($user_status == 1) {
-                              ?>
+                        $user_status = $row['user_status'];
+                        if ($user_status == 1) {
+                          ?>
                           <td class="text-success"><strong>Online</strong></td>
-                        <?php
-                            } else {
-                              ?>
+                          <?php
+                        } else {
+                          ?>
                           <td class="text-danger"><strong>Offline</strong></td>
-
-                        <?php
-                            }
-                            ?>
+                          <?php
+                        }
+                        ?>
                         <td>
                           <form action="../api/updateUserStatus.php" method="POST">
                             <input type="hidden" name="userId" value="<?php echo $row['id']; ?>" <div class="form-group">
@@ -251,7 +148,7 @@ if (!isset($_SESSION['User'])) {
                         </td>
 
                       </tr>
-                  <?php
+                      <?php
                     }
                   }
                   ?>
@@ -259,37 +156,10 @@ if (!isset($_SESSION['User'])) {
               </table>
             </div>
           </main>
-
-          <div class="ml-auto mr-auto text-center py-5 mt-5">
-            <footer class="footer">
-              <div class="footer__block block no-margin-bottom">
-                <div class="container-fluid text-center">
-                  <p class="no-margin-bottom">2020 &copy; Dreeko Corporations | All Rights Reserved. <a title="www.github.com/Harshana-Rathnayaka" target="_blank" href="https://github.com/Harshana-Rathnayaka" class="icon-repo-forked"> Repository &rightarrowtail;</a></p>
-                </div>
-              </div>
-            </footer>
-          </div>
-
+          <?php include 'footer.php' ?>
         </div>
       </div>
-      <script src="js/jquery-3.3.1.slim.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/feather.min.js"></script>
-      <script src="js/Chart.min.js"></script>
-      <script src="js/dashboard.js"></script>
-
-      <!--===============================================================================================-->
-      <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-      <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-      <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-
-      <script>
-        $(document).ready(function() {
-          $('#usersTable').DataTable({
-            "lengthMenu": [5, 10],
-          });
-        });
-      </script>
+      <?php include 'scripts.php' ?>
 
 </body>
 
