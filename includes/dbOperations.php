@@ -375,8 +375,11 @@ class DbOperations
 	// retrieving pending orders to admin
 	public function getAllPendingOrders()
 	{
-		$stmt = $this->con->prepare("SELECT * FROM `orders` INNER JOIN `users` ON users.id = orders.user_id
-		WHERE `order_status` = 0 ORDER BY `timestamp`");
+		$stmt = $this->con->prepare("SELECT `users`.`username`,vehicles.*, manufacturers.*, order_items.*, `orders`.`timestamp`, `orders`.`order_status` FROM `order_items` 
+		INNER JOIN `orders` ON orders.order_id = order_items.order_id 
+		INNER JOIN `users` ON users.id = orders.user_id 
+		INNER JOIN `vehicles` ON vehicles.vehicle_id = order_items.vehicle_id 
+        INNER JOIN `manufacturers` ON manufacturers.make_id = vehicles.make WHERE `order_status` = 0 ORDER BY `timestamp`");
 		$stmt->execute();
 		return $stmt->get_result();
 	}
@@ -388,7 +391,7 @@ class DbOperations
 		INNER JOIN `orders` ON orders.order_id = order_items.order_id 
 		INNER JOIN `users` ON users.id = orders.user_id 
 		INNER JOIN `vehicles` ON vehicles.vehicle_id = order_items.vehicle_id 
-        INNER JOIN `manufacturers` ON manufacturers.make_id = vehicles.make ");
+        INNER JOIN `manufacturers` ON manufacturers.make_id = vehicles.make");
 		$stmt->execute();
 		return $stmt->get_result();
 	}

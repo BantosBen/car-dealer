@@ -43,41 +43,41 @@ $page = 'addmanufacturer';
                 if (@$_SESSION['success'] == true) {
                     $success = $_SESSION['success'];
                     ?>
-                    <script>
-                        swal({
-                            title: "SUCCESS!",
-                            text: "<?php echo $success; ?>",
-                            icon: "success",
-                            button: "OK",
-                        });
-                    </script>
-                    <?php
+                <script>
+                swal({
+                    title: "SUCCESS!",
+                    text: "<?php echo $success; ?>",
+                    icon: "success",
+                    button: "OK",
+                });
+                </script>
+                <?php
                     unset($_SESSION['success']);
                 } elseif (@$_SESSION['error'] == true) {
                     $error = $_SESSION['error'];
                     ?>
-                    <script>
-                        swal({
-                            title: "ERROR!",
-                            text: "<?php echo $error; ?>",
-                            icon: "warning",
-                            button: "OK",
-                        });
-                    </script>
-                    <?php
+                <script>
+                swal({
+                    title: "ERROR!",
+                    text: "<?php echo $error; ?>",
+                    icon: "warning",
+                    button: "OK",
+                });
+                </script>
+                <?php
                     unset($_SESSION['error']);
                 } elseif (@$_SESSION['missing'] == true) {
                     $missing = $_SESSION['missing'];
                     ?>
-                    <script>
-                        swal({
-                            title: "INFO!",
-                            text: "<?php echo $missing; ?>",
-                            icon: "info",
-                            button: "OK",
-                        });
-                    </script>
-                    <?php
+                <script>
+                swal({
+                    title: "INFO!",
+                    text: "<?php echo $missing; ?>",
+                    icon: "info",
+                    button: "OK",
+                });
+                </script>
+                <?php
                     unset($_SESSION['missing']);
                 }
                 ?>
@@ -125,30 +125,10 @@ $page = 'addmanufacturer';
                 </form>
 
             </main>
-
-            <div class="ml-auto mr-auto text-center py-5 mt-5">
-                <footer class="footer">
-                    <div class="footer__block block no-margin-bottom">
-                        <div class="container-fluid text-center">
-                            <p class="no-margin-bottom">2020 &copy; Dreeko Corporations | All Rights Reserved. <a
-                                    title="www.github.com/Harshana-Rathnayaka" target="_blank"
-                                    href="https://github.com/Harshana-Rathnayaka" class="icon-repo-forked"> Repository
-                                    &rightarrowtail;</a></p>
-                        </div>
-                    </div>
-                </footer>
-            </div>
+            <?php include 'footer.php' ?>
         </div>
     </div>
-
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/feather.min.js"></script>
-    <script src="js/Chart.min.js"></script>
-    <script src="js/dashboard.js"></script>
-
-    <!--===============================================================================================-->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
+    <?php include 'scripts.php' ?>
 </body>
 
 </html>
